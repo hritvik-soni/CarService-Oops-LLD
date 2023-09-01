@@ -81,6 +81,10 @@ class CarService {
                 }
             }
             billList.add("Total Bill Amount =  " + String.valueOf(totalAmount));
+            if (totalAmount > 10000) {
+                billList.add("A Complimentary Cleaning is Done for Free");
+            }
+
             billList.add("--------------------- END ----------------------");
             return billList;
 
@@ -118,6 +122,9 @@ class CarService {
                 }
             }
             billList.add("Total Bill Amount =  " + String.valueOf(totalAmount));
+            if (totalAmount > 10000) {
+                billList.add("A Complimentary Cleaning is Done for Free");
+            }
             billList.add("--------------------- END ----------------------");
             return billList;
 
@@ -155,6 +162,9 @@ class CarService {
                 }
             }
             billList.add("Total Bill Amount =  " + String.valueOf(totalAmount));
+            if (totalAmount > 10000) {
+                billList.add("A Complimentary Cleaning is Done for Free");
+            }
             billList.add("--------------------- END ----------------------");
             return billList;
         }
