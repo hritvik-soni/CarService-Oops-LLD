@@ -3,15 +3,11 @@ import java.util.*;
 
 class coffeeMachine {
 
-  
-
     static int water = 1200, milk = 540, coffeeBeans = 120, disposableCups = 9, money = 550;
     static Scanner input = new Scanner(System.in);
 
-
     public static void espresso(int cup) {
 
-    
         if (250 * cup > water) {
             System.out.println("Not enough water resource, please refill");
         }
@@ -21,11 +17,10 @@ class coffeeMachine {
         if (cup > disposableCups) {
             System.out.println("Not enough cups resource, please refill");
         }
-      
+
         if (250 * cup < water && 16 * cup < coffeeBeans && cup < disposableCups) {
             System.out.println("Enough resorce, making cup of coffee, please wait.\n");
 
-       
             water -= 250 * cup;
             coffeeBeans -= 16 * cup;
             disposableCups -= cup;
@@ -34,9 +29,8 @@ class coffeeMachine {
         }
     }
 
-
     public static void latte(int cup) {
-     
+
         if (350 * cup > water) {
             System.out.println("Not enough water resource, please refill");
         }
@@ -49,7 +43,7 @@ class coffeeMachine {
         if (cup > disposableCups) {
             System.out.println("Not enough disposable cups resource, please refill");
         }
-    
+
         if (350 * cup < water && 75 * cup < milk && 20 * cup < coffeeBeans && cup < disposableCups) {
             System.out.println("Enough resorce, making cup of coffee, please wait.\n");
 
@@ -64,7 +58,6 @@ class coffeeMachine {
 
     public static void cappuccino(int cup) {
 
-     
         if (200 * cup > water) {
             System.out.println("Not enough water resource, please refill");
         }
@@ -77,7 +70,7 @@ class coffeeMachine {
         if (cup > disposableCups) {
             System.out.println("Not enough cups resource, please refill");
         }
-    
+
         if (200 * cup < water && 100 * cup < milk && 12 * cup < coffeeBeans && cup < disposableCups) {
             System.out.println("Enough resource, making cup of coffee, please wait.\n");
 
@@ -90,9 +83,8 @@ class coffeeMachine {
         }
     }
 
-
     public static void fill() {
-      
+
         System.out.println("How much do you want to refill by?\n");
 
         System.out.println("How much water: ");
@@ -111,9 +103,8 @@ class coffeeMachine {
 
     }
 
-
     public static void remaining() {
-    
+
         System.out.println("\nResources in the coffee machine");
         System.out.println(water + " Water remaining in the machine");
         System.out.println(milk + " Milk remaining in the machine");
@@ -122,11 +113,10 @@ class coffeeMachine {
         System.out.println("$" + money + " Money in the machine\n");
     }
 
-
     public static void buy() {
 
         System.out.println("What would you like to purchase:");
-    
+
         System.out.println("1 - espresso\n" + "2 - latee\n" + "3 - cappuccino\n" + "back - Main Menu");
         String choice = input.next();
         int cup;
@@ -153,7 +143,6 @@ class coffeeMachine {
         }
     }
 
- 
     public static void take() {
         System.out.println("Currently you have a balance of $" + money);
         money -= money;
@@ -166,8 +155,7 @@ class coffeeMachine {
         System.out.println("Welcome please choose what would you like (buy, take, fill, remaining, exit)");
         String choice = input.next();
 
-        while (!choice.equals("exit"))
-        {
+        while (!choice.equals("exit")) {
 
             if (choice.equals("buy")) {
                 buy();
@@ -181,9 +169,12 @@ class coffeeMachine {
                 System.out.println("Wrong input, please try again (buy, take, fill, remaining, exit)\n");
                 choice = input.next();
             }
-          
+
             System.out.println("\nPlease choose what would you like (buy, take, fill, remaining, exit");
             choice = input.next();
+        }
+        if (choice.equals("exit")) {
+            System.out.println("\n * The Machine is Exited Thank You *");
         }
     }
 
